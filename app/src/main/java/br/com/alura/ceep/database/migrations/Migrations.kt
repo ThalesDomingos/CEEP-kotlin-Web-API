@@ -54,3 +54,9 @@ val MIGRATION_2_3 = object : Migration(2, 3) {
         database.execSQL("ALTER TABLE Nota ADD sincronizada INTERGER NOT NULL DEFAULT 0")
     }
 }
+
+val MIGRATION_3_4 = object : Migration(3, 4) {
+        override fun migrate(database: SupportSQLiteDatabase) {
+            database.execSQL("ALTER TABLE Nota ADD desativada INTERGER NOT NULL DEFAULT 0")
+        }
+}
